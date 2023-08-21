@@ -8,18 +8,18 @@ const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
 const flash = require('connect-flash');
-const { campgroundSchema, reviewSchema } = require('./schemas.js');
+const { attractionSchema, reviewSchema } = require('./schemas.js');
 
 const ExpressError = require('./utils/ExpressError')
 const methodOverride = require('method-override');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
-const Campground = require('./models/campground');
+const Attraction = require('./models/attraction');
 const Review = require('./models/review');
 
 const userRoutes = require('./routes/users');
-const campgroundRoutes = require('./routes/campgrounds');
+const attractionRoutes = require('./routes/attractions');
 const reviewRoutes = require('./routes/reviews');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
@@ -146,8 +146,8 @@ app.use((req, res, next) => {
 
 
 app.use('/', userRoutes);
-app.use("/campgrounds", campgroundRoutes);
-app.use("/campgrounds/:id/reviews", reviewRoutes);
+app.use("/attractions", attractionRoutes);
+app.use("/attractions/:id/reviews", reviewRoutes);
 
 app.get('/', (req, res) => {
     res.render('home')

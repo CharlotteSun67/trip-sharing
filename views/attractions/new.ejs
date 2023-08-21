@@ -1,0 +1,77 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">New Attraction</h1>
+        <div class="col-md-6 offset-md-3">
+            <form action="/attractions" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Name</label>
+                    <input class="form-control" type="text" , id="title" name="attraction[title]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="attraction[location]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image">Choose image(s)</label>
+                    <input class="form-control" type="file" id="image" name="image" multiple>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">Attraction Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                            aria-describedby="price-label" name="attraction[price]" required>
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="attraction[description]"
+                        required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success">Add Attraction</button>
+                </div>
+            </form>
+            <a href="/attractions">All Attractions</a>
+        </div>
+    </div>
+
+
+        <!-- Default styling. Feel free to remove!
+        <link href="https://api.mapbox.com/mapbox-assembly/v1.3.0/assembly.min.css" rel="stylesheet">
+        <script id="search-js" defer="" src="https://api.mapbox.com/search-js/v1.0.0-beta.17/web.js"></script>
+        </head>
+        <body>
+        <form class="prose flex flex--column">
+        <h3>Shipping</h3>
+        <mapbox-address-autofill>
+        <input class="input mb12" name="address" autocomplete="shipping address-line1" placeholder="Address">
+        </mapbox-address-autofill>
+         
+
+
+        </form>
+        <script>
+        const ACCESS_TOKEN = 'pk.eyJ1IjoiY2hhcmxvdHRlc3VuIiwiYSI6ImNsbGptcjIzYzB1MGwzbG5seHR5Y2dqbHAifQ.ORtoDFzXdaXYFyRacWlKFg';
+         
+        const script = document.getElementById('search-js');
+        script.onload = () => {
+        const elements = document.querySelectorAll('mapbox-address-autofill');
+        for (const autofill of elements) {
+        autofill.accessToken = ACCESS_TOKEN;
+        }
+        };
+        </script>
+        </body> -->
