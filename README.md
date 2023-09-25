@@ -1,1 +1,1 @@
-# [Fullstack Discord Clone: Next.js 13, React, Socket.io, Prisma, Tailwind, MySQL](https://discord-clone-production-f28d.up.railway.app)
+# [Fullstack Project - Share Your Trips: JavaScript, NodeJS, Express, MongoDB](https://trip-sharing.onrender.com)
